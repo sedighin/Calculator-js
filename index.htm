@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <head>
+        <title>Calc</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                outline: none;
+            }
+            body, html {
+                height:100%
+            }
+            form {
+                background: #222;
+                width: 250px;
+                border-radius: 10px;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            input[name="display"]{
+                background: rgba(117, 231, 187, 0.74);
+                height: 40px;
+                text-align: right;
+                border-radius: 8%;
+                margin: 5px;
+                width: calc(100% - 30px);
+                border: none;
+                padding: 0 10px;
+            }
+            input[type="button"]{
+                float: left;
+                width: calc(100% / 4 - 6.5px);
+                background: rgb(12, 255, 154);
+                border-radius: 8px;
+                height: 36px;
+                text-align: center;
+                margin: 0 0 5px 5px;
+                border: none;
+
+            }
+            input[type="button"]:nth-last-of-type(1){
+                background: yellow;
+                width: calc(50% - 7px);
+            }
+
+        </style>
+        <script>
+            function data(val){
+                calc.display.value += val;
+            }
+            function ac(){
+                calc.display.value = ""
+            }
+            function c(){
+                calc.display.value = calc.display.value.slice(0 , -1);
+            }
+            function equal(){
+                calc.display.value = eval(calc.display.value);
+            }
+        </script>
+    </head>
+    <body>
+        <form name="calc">
+            <input type="text" value="" style="font-size: 20px" disabled name="display">
+            <input type="button" value="AC"style="font-size: 20px" onclick="ac()">
+            <input type="button" value="C" style="font-size: 20px" onclick="c()">
+            <input type="button" value="%" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="-" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="9" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="8" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="7" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="*" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="6" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="5" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="4" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="/" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="3" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="2" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="1" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="+" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="0" style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="." style="font-size: 20px" onclick="data(this.value)">
+            <input type="button" value="=" style="font-size: 20px" onclick="equal()">
+            <div style="clear: both ;"></div>
+
+
+        </form>
+    </body>
